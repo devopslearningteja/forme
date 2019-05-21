@@ -9,6 +9,14 @@ node{
         }
         stage('Tf')
         {
-            sh 'terraform --version'
-        }   
-}
+            def tfHome = tool name: 'terraform 0-11-1'
+            def tf = "${tfHome}/terraform"
+            sh "${tf} version"
+            echo "${tf}"
+            dir("/home/jenkins/files/Terraform/"){
+            if(!fileExists(".terraform")){
+            sh "${tf} init -input=false "
+        }
+        sh "${tf} plan"
+        sh "${tf} apply -input=false -auto-approve"
+}   
