@@ -19,4 +19,5 @@ node{
         }
         sh "${tf} plan"
         sh "${tf} apply -input=false -auto-approve"
-}   
+        }   
+}
