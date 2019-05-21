@@ -13,11 +13,6 @@ node{
             def tf = "${tfHome}/terraform"
             sh "${tf} version"
             echo "${tf}"
-            dir("/home/jenkins/files/Terraform/"){
-            if(!fileExists(".terraform")){
-            sh "${tf} init -input=false "
-        }
-        sh "${tf} plan"
-        sh "${tf} apply -input=false -auto-approve"
+          
         }   
 }
