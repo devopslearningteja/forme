@@ -1,3 +1,4 @@
+pipeline{
 stage('scm'){
     git 'https://github.com/wakaleo/game-of-life.git'
 }   
@@ -9,3 +10,4 @@ stage('Tf'){
     sh 'terraform --version'
 }   
     
+}
