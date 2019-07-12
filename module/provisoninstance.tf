@@ -5,7 +5,7 @@ resource "aws_instance" "Gameoflife" {
   subnet_id = "${aws_subnet.mysubnet.id}"
   ami = "ami-0a313d6098716f372"
   instance_type = "t2.micro"
-  key_name = "AnsibleCM"
+  key_name = "JenkinsCS"
   associate_public_ip_address = true
   vpc_security_group_ids = ["${aws_security_group.mysg.id}"]
   connection{
