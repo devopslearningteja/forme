@@ -11,11 +11,11 @@ resource "aws_instance" "Gameoflife" {
   connection{
     type ="ssh"
     user = "ubuntu"
-    private_key ="${file("./module/AnsibleCM.pem")}"
+    private_key ="${file("./module/JenkinsCS.pem")}"
   }
 
   provisioner "file" {
-    source      = "/home/jenkins/workspace/tfchef/gameoflife-web/target/gameoflife.war"
+    source      = "/home/jenkins/workspace/tfrraformproject/gameoflife-web/target/gameoflife.war"
     destination = "/tmp/gameoflife.war"
   }
  provisioner "chef" {
