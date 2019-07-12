@@ -15,7 +15,7 @@ resource "aws_instance" "Gameoflife" {
   }
 
   provisioner "file" {
-    source      = "/home/jenkins/workspace/tfrraformproject/gameoflife-web/target/gameoflife.war"
+    source      = "/home/jenkins/workspace/tefrraformproject/gameoflife-web/target/gameoflife.war"
     destination = "/tmp/gameoflife.war"
   }
  provisioner "chef" {
